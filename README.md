@@ -10,14 +10,7 @@
 
 This project investigates the relationship between **migration routes, migrant deaths/disappearances, and conflict intensity** across Africa, Europe, and the Mediterranean region.
 
-By combining:
-
-- Missing migrant incident data (IOM Missing Migrants Project)
-- Armed conflict data (ACLED)
-- Population data (World Bank)
-- Country boundary shapefiles (GISCO)
-
-the analysis produces interactive and static maps to visualize:
+The analysis produces maps to visualize:
 
 - Migration flows
 - Death counts per route
@@ -26,6 +19,16 @@ the analysis produces interactive and static maps to visualize:
 - Route-level comparisons
 
 The goal is to explore whether **migration routes passing through conflict-affected regions are associated with higher mortality risks**.
+
+---
+
+### Migration Flow Map
+- Countries classified as origin, transit, or destination
+- Directional arrows illustrate flows
+- Major migration corridors highlighted
+
+Output:
+![Migration flow map](plots/violence_heatmap_with_bubbles.png)
 
 ---
 
@@ -47,14 +50,3 @@ The goal is to explore whether **migration routes passing through conflict-affec
 | World Bank | Population data for normalization |
 | GISCO | Country boundary shapefiles |
 
----
-
-## Features & Outputs
-
-### Migration Flow Map
-- Countries classified as origin, transit, or destination
-- Directional arrows illustrate flows
-- Major migration corridors highlighted
-
-Output:
-![Migration flow map](plots/violence_heatmap_with_bubbles.png)
