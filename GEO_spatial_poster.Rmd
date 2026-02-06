@@ -28,7 +28,7 @@ library(extrafont)
 
 
 ```{r data preprocessing}
-mm_df <- read.csv("Missing_Migrants_2025.csv") %>% 
+mm_df <- read.csv("data/Missing_Migrants_2025.csv") %>% 
   # replace the whitespeace in column names to _
   setNames(gsub(" ", "_", names(.))) %>%
   separate(Coordinates, into = c("lat", "lon"), sep=",") %>% 
@@ -59,13 +59,9 @@ mm_df <- read.csv("Missing_Migrants_2025.csv") %>%
   ungroup() %>%
   
   # Clean whitespace in country names
-  mutate(country = trimws(country)) #%>%
-  
-  #group_by(country) %>% 
-  #summarise(count = n()) %>% 
-  #ungroup()
+  mutate(country = trimws(country)) 
 
-acled_df <- read.csv("acled.csv") %>%
+acled_df <- read.csv("data/ACLED.csv") %>%
   rename(lat = latitude, lon = longitude) %>%
   drop_na(lat, lon, country) %>%
   # drop columns exept for lat, lon, event_type, country, year, event_id
@@ -123,7 +119,7 @@ acled_df_agg <- acled_df_agg %>%
   
 
 # new acled to csv
-write.csv(acled_df_agg,"acled_new.csv", row.names = FALSE)
+write.csv(acled_df_agg,"ACLED_clean.csv", row.names = FALSE)
 ```
 
 ## Filter down to countries in mm_df
