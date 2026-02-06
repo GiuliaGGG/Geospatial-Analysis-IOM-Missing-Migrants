@@ -1,18 +1,60 @@
-<h2>IOM Missing Migrants Project</h2>
-        <p>To practice my leaflet and shinyapp scills I started this small project with the IOM Missing Migrants dataset. 
-            I optained the data from <a href="https://www.kaggle.com/datasets/nelgiriyewithana/global-missing-migrants-dataset/data">kaggel</a>.
-        </p>
-        <p>The dataset encompasses details regarding the fatalities and disappearances of migrants globally. 
-            It is meticulously compiled from diverse sources, including IOM field offices, media reports, and surveys. Updated on an annual basis, the dataset spans from 2014 to 2020. Curated by the International Organization for Migration's Missing Migrants Project, this repository serves as a comprehensive database documenting missing and deceased migrants.
-        </p>
-        <p>
-            I created a leaflet map to visualize the data. The map shows the number of incidents reported in the data set. The barplot shows the number of incidents per migration route. The user can select the year, month and the region of interest. The map and the barplot will update accordingly.
-        </p>
+# Migration Routes, Missing Migrants & Conflict Analysis
 
+**Authors:** Lino Zurmuehl, Giulia Petrilli  
+**Language:** R  
+**Type:** Geospatial data analysis & visualization project
 
-To DO:
-- Set up notebook
-- make the migration routes more pretty and based on actual routes from literature
-- Decide on distance from the route as being a death on this route
-- Update the shiny app
-- 
+---
+
+## Overview
+
+This project investigates the relationship between **migration routes, migrant deaths/disappearances, and conflict intensity** across Africa, Europe, and the Mediterranean region.
+
+By combining:
+
+- Missing migrant incident data (IOM Missing Migrants Project)
+- Armed conflict data (ACLED)
+- Population data (World Bank)
+- Country boundary shapefiles (GISCO)
+
+the analysis produces interactive and static maps to visualize:
+
+- Migration flows
+- Death counts per route
+- Conflict intensity by country
+- Combined migration–conflict overlays
+- Route-level comparisons
+
+The goal is to explore whether **migration routes passing through conflict-affected regions are associated with higher mortality risks**.
+
+---
+
+## Key Questions
+
+- Which migration routes show the highest number of deaths?
+- Do routes crossing high-conflict regions exhibit greater risks?
+- How do origin, transit, and destination countries differ in conflict intensity?
+- Is there a relationship between violence levels and migrant mortality?
+
+---
+
+## Data Sources
+
+| Source | Description |
+|--------|-------------|
+| Missing Migrants Project (IOM) | Deaths and disappearances during migration |
+| ACLED | Armed conflict & violent incident records |
+| World Bank | Population data for normalization |
+| GISCO | Country boundary shapefiles |
+
+---
+
+## Features & Outputs
+
+### Migration Flow Map
+- Countries classified as origin, transit, or destination
+- Directional arrows illustrate flows
+- Major migration corridors highlighted
+
+Output:
+![Migration flow map](plots/violence_heatmap_with_bubbles.png)
